@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Utils\Utils.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -98,7 +99,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -106,17 +106,14 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
   <Target Name="BeforeBuild">
     <!-- Remove obj folder -->
-  <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
-  <!-- Remove bin folder -->
-  <RemoveDir Directories="$(BaseOutputPath)" />
+    <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
+    <!-- Remove bin folder -->
+    <RemoveDir Directories="$(BaseOutputPath)" />
   </Target>
-
   <Target Name="AfterBuild">
     <!-- Remove obj folder -->
-    <RemoveDir Directories="$(BaseIntermediateOutputPath)" />    
+    <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
   </Target>
-  
 </Project>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Binarization.Binarizators
+namespace Binarization
 {
     // thresholding называется пороговая бинаризация
     public class BinaryzatorType1 : BinaryzatorBase
