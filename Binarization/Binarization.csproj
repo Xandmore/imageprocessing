@@ -113,5 +113,10 @@
   <!-- Remove bin folder -->
   <RemoveDir Directories="$(BaseOutputPath)" />
   </Target>
+
+  <Target Name="AfterBuild">
+    <!-- Remove obj folder -->
+    <RemoveDir Directories="$(BaseIntermediateOutputPath)" />    
+  </Target>
   
 </Project>
