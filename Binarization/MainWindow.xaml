@@ -17,15 +17,19 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="9*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Border Background="Gray" Grid.Column="0" Grid.ColumnSpan="3">
-            <Image x:Name="Image" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Border Background="Gray" Grid.Column="0" Grid.ColumnSpan="4">
+            <Image  x:Name="ImageBox" />
         </Border>
-        
+
+        <Label x:Name="ImageSize" Foreground="#00cc00"></Label>
         <Button x:Name="OpenButton" Content="Open" Grid.Row="1" VerticalAlignment="Center" Margin="10, 0, 0, 0" Click="OpenButton_Click"/>
-        <TextBox x:Name="FilePathTextBox" HorizontalAlignment="Stretch" Height="20" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 0, 10, 0"/>
-        <Button x:Name="SaveButton" Content="Save As..." Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" Margin="0, 0, 10, 0" />
-        
-        <Button x:Name="ProcessButton" Grid.ColumnSpan="3" Content="Process Image" HorizontalAlignment="Right" VerticalAlignment="Center" Width ="110" Grid.Row="2" Margin="0, 0, 10, 0" />
+        <TextBox x:Name="FilePathTextBox" HorizontalAlignment="Stretch" Height="20" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 0, 10, 0"/>
+        <Button x:Name="SaveButton" Content="Save As..." Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" Margin="0, 0, 10, 0" />
+
+        <Slider x:Name="slider" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="10, 0, 10, 0" RenderTransformOrigin="0.75,-0.8" Maximum="255" ValueChanged="slider_ValueChanged"/>
+        <Button x:Name="ProcessButton" Grid.Column="2" Grid.ColumnSpan="2" Content="Process Image" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="2" Margin="0, 0, 10, 0" Click="ProcessButton_Click" />
+
     </Grid>
 </Window>

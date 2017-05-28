@@ -40,7 +40,19 @@ namespace Binarization
             }
 
             Binaryzator.Image = new BitmapImage(new Uri(dialog.FileName));
-            Image.Source = Binaryzator.Image;
-        }        
+            //ImageBox.Source = Binaryzator.Image;
+            ImageBox.Source = Binaryzator.FinalImage;
+            ImageSize.Content = Binaryzator.GetImageSize();
+        }
+
+        private void ProcessButton_Click(object sender, RoutedEventArgs e)
+        {
+            Binaryzator.Process();
+        }
+
+        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Binaryzator.Threshold = e.NewValue;
+        }
     }
 }
